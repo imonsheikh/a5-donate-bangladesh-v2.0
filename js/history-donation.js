@@ -57,3 +57,24 @@ addHidden('history-section')
 
 
 
+// blog 
+    const blogBtn = document.getElementById('blog-btn')
+    blogBtn.addEventListener('click', function(){
+        removeHidden('blog')
+        addHidden('donation-history')
+        addHidden('cards-section')
+        blogBtn.innerText = "Home"
+
+        // removeHidden('donation-history')
+        // removeHidden('cards-section')
+        // blogBtn.innerText = "Blog"
+    
+        
+    })
+
+
+
+
+
+
+
