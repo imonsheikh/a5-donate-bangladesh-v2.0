@@ -5,13 +5,19 @@
 const donateNow = document.getElementById("donate-now");
 donateNow.addEventListener("click", function () {
   //Read OR Get data...
+  const totalBalance = getTextValueById("total-balance");
   const card1InputValue = getInputValueById("card1-input");
-
+  
+  if(card1InputValue > totalBalance){
+    return alert('Donation is greater than your balance')
+  }
   //   validation
-  if (isNaN(card1InputValue) || card1InputValue <= 0) {
+  if (isNaN(card1InputValue) || card1InputValue <= 0 || typeof card1InputValue !== 'number') {
     alert("Invalid Input");
     return;
   }
+
+
 
   //initial ++
   const card1TextValue = getTextValueById("card1-balance");
@@ -19,14 +25,20 @@ donateNow.addEventListener("click", function () {
   const updateCard1TextValue = card1InputValue + card1TextValue;
   document.getElementById("card1-balance").innerText = updateCard1TextValue;
 
-  //initial --
-  const totalBalance = getTextValueById("total-balance");
+
   //update --
   const updateTotalBalance = totalBalance - card1InputValue;
   document.getElementById("total-balance").innerText = updateTotalBalance;
 
   //  modal showing here
   document.getElementById("my_modal_1").showModal();
+
+
+
+  // function from utilities
+  historyCard(card1InputValue, "Flood at Noakhali, Bangladesh")
+
+
 });
 
 
@@ -35,10 +47,10 @@ donateNow.addEventListener("click", function () {
 const donateNow2 = document.getElementById("donate-now2");
 donateNow2.addEventListener("click", function () {
   //Read OR Get data...
-  const card3InputValue = getInputValueById("card2-input");
+  const card2InputValue = getInputValueById("card2-input");
 
   // validation 
-  if (isNaN(card3InputValue) || card3InputValue <= 0) {
+  if (isNaN(card2InputValue) || card2InputValue <= 0) {
     alert("Invalid Input");
     return;
   }
@@ -48,13 +60,17 @@ donateNow2.addEventListener("click", function () {
   const totalBalance = getTextValueById("total-balance");
 
   //Update ++ && --
-  const updateCard2TextValue = card3InputValue + card2TextValue;
+  const updateCard2TextValue = card2InputValue + card2TextValue;
   document.getElementById("card2-balance").innerText = updateCard2TextValue;
-  const updateTotalBalance2 = totalBalance - card3InputValue;
+  const updateTotalBalance2 = totalBalance - card2InputValue;
   document.getElementById("total-balance").innerText = updateTotalBalance2;
 
     //  modal showing here
     document.getElementById("my_modal_1").showModal();
+
+
+      // function from utilities
+  historyCard(card2InputValue, "Flood Relief in Feni,Bangladesh")
 });
 
 
@@ -82,6 +98,13 @@ donateNow3.addEventListener("click", function () {
   const updateTotalBalance2 = totalBalance - card3InputValue;
   document.getElementById("total-balance").innerText = updateTotalBalance2;
 
+  document.getElementById('donate-now3').value = ""
+
     //  modal showing here
     document.getElementById("my_modal_1").showModal();
-});
+
+
+   // function from utilities
+  historyCard(card3InputValue, "Aid for Injured in the Quota Movement")
+
+  });

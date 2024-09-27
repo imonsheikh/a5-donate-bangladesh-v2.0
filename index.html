@@ -56,16 +56,19 @@
     </header>
 
     <main class="mt-10">
+
         <!-- donation and history starts  -->
         <div class="flex justify-center gap-4">
-            <button class="btn bg-primaryBtn font-bold text-secondaryText text-lg">Donation</button>
+            <button id="donation-btn" class="btn bg-primaryBtn font-bold text-secondaryText text-lg">Donation</button>
 
-            <button class="btn bg-transparent border-gray-900 border-2 text-gray text-lg">History</button>
+            <button id="history-btn" class="btn bg-transparent border-gray-900 border-2 text-gray text-lg">History</button>
         </div>
         <!-- donation and history ends  -->
 
         <!-- card starts  -->
-        <div class="md:w-10/12 mx-auto mt-10 md:space-y-5 space-y-3">
+        <div
+        id="cards-section" 
+        class="md:w-10/12 mx-auto mt-10 md:space-y-5 space-y-3">
 
             <!-- card1 -->
             <div class="border border-slate-300 p-5 flex gap-5  md:flex-row flex-col justify-between rounded-xl">
@@ -144,6 +147,7 @@
 
         </div>
         <!-- card ends  -->
+
     </main>
 
     <footer>
@@ -165,13 +169,21 @@
       </div>
     </div>
   </dialog>
+
+  <!-- history section -->
+  <div id="history-section" class="md:space-y-4 space-y-2 hidden">
+
+  </div>
+
+
     </footer>
 
 
 
 
     <script src="./js/utilities.js"></script>
-    <script src="./js/main.js"></script>
+    <script src="./js/donation.js"></script>
+    <script src="./js/history.js"></script>
 </body>
 
 </html>
